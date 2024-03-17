@@ -4,6 +4,7 @@ pragma solidity ^0.8.24;
 
 import './Constants.sol';
 
+// Http trigger types
 struct Header {
     string key;
     string value;
@@ -47,4 +48,17 @@ library RequestImpl {
             }
         }
     }
+}
+
+// Log trigger types
+struct EvmLog {
+    address emitter;
+    bytes[] topics;
+    bytes data;
+    bytes blockHash;
+    uint blockNumber;
+    bytes txHash;
+    uint txIndex;
+    uint logIndex;
+    bool removed;
 }
